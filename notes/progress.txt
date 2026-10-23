@@ -1,0 +1,33 @@
+MY MYSQL LEARNING CHECKLIST
+
+Mark [x] only when you can explain and write the query without copying it.
+
+[ ] Connect, select a database, inspect a table, and run a SQL file.
+[ ] Identify tables, rows, columns, primary keys, and foreign keys.
+[ ] SELECT named columns, expressions, and aliases.
+[ ] Filter with WHERE, AND/OR, IN, BETWEEN, and LIKE.
+[ ] Order by multiple keys and explain LIMIT/OFFSET.
+[ ] Test for NULL and use COALESCE correctly.
+[ ] Transform text, numeric, and date values.
+[ ] Explain COUNT(*), COUNT(column), SUM, AVG, MIN, and MAX.
+[ ] Explain WHERE versus HAVING and write valid GROUP BY queries.
+[ ] Join orders to customers and recognize one-to-many row multiplication.
+[ ] Keep missing matches with LEFT JOIN and find absence with NOT EXISTS.
+[ ] Use scalar and correlated subqueries.
+[ ] Label rows with CASE; choose UNION or UNION ALL intentionally.
+[ ] Preview, insert, update, and delete inside a reversible practice transaction.
+[ ] Read constraints and explain duplicate, CHECK, and foreign-key errors.
+[ ] Distinguish DELETE, TRUNCATE, DROP, and ALTER.
+[ ] Use transactions, savepoints, and guarded stock updates.
+[ ] Name multi-step queries with CTEs.
+[ ] Rank rows and calculate a deterministic running total.
+[ ] Create/read/drop a view and explain its security mode.
+[ ] Inspect indexes and read EXPLAIN without overclaiming performance.
+[ ] Bind input values safely and explain least privilege.
+[ ] Make a backup and successfully restore it to a separate database.
+[ ] Solve all eight project reports and explain their row grain.
+[ ] Run checks/run.py successfully against my practice server.
+
+My hardest topic:
+My most useful mistake:
+My next practice project:

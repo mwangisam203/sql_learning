@@ -1,0 +1,38 @@
+REPORT_01
+2025-01	41.50
+2025-02	53.00
+2025-03	79.50
+REPORT_02
+1	Amina Otieno	2	66.50
+2	Brian Mwangi	2	67.00
+3	Chloe Njeri	1	16.50
+4	Diego Kamau	0	0.00
+5	Ella Wanjiku	1	24.00
+6	Farah Ali	0	0.00
+REPORT_03
+1	Notebook	3	13.50
+2	Pen	13	19.50
+3	Mug	4	48.00
+4	Keyboard	1	45.00
+5	Cable	6	48.00
+6	Backpack	0	0.00
+REPORT_04
+6	Farah Ali
+REPORT_05
+6	Backpack
+REPORT_06
+6	174.00	29.00
+REPORT_07
+1	13.50	13.50
+2	28.00	41.50
+3	53.00	94.50
+6	39.00	133.50
+7	24.00	157.50
+8	16.50	174.00
+REPORT_08
+2	Brian Mwangi	67.00	1
+1	Amina Otieno	66.50	2
+5	Ella Wanjiku	24.00	3
+3	Chloe Njeri	16.50	4
+4	Diego Kamau	0.00	5
+6	Farah Ali	0.00	5
