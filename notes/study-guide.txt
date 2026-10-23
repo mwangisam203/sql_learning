@@ -1,0 +1,28 @@
+HOW TO STUDY THIS COURSE
+
+Spend about 20-40 minutes per lesson. Progress matters more than speed.
+
+1. Read the goal and predict what an example will return.
+2. Run the example; compare its result with your prediction.
+3. Change one condition, column, or sort direction and predict again.
+4. Solve the exercises before looking at answers.sql.
+5. Explain WHY the query works, including what one output row represents.
+6. Write one mistake you made and how you fixed it.
+
+Learn SELECT, WHERE, ORDER BY, NULL, GROUP BY, JOIN, keys, and safe writes
+first. CTEs, windows, views, indexes, and backups build on that foundation.
+Do not memorize every function. Learn to find the correct official page.
+
+SQL is the query language. MySQL is a database server that implements it.
+The mysql terminal program is a client that sends statements to a server.
+A SQL file is plain text; it does nothing until a client executes it.
+
+Git practice:
+  git log --reverse --oneline
+  git show <commit-id>
+  git diff
+  git add path/to/your/practice.sql
+  git commit -m "practice: explain the query you learned"
+
+Keep your own practice queries in a new practice/ directory. Resetting the
+course data changes database rows, not files. Keep passwords out of Git.
