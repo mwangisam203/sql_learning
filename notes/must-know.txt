@@ -1,0 +1,33 @@
+MYSQL: MUST KNOW
+
+1. Know the row grain before joining or summing. One order can have many lines.
+2. Filter reporting statuses explicitly. Paid/shipped revenue in this seed is 174.00.
+3. Use the historical line price for revenue, not the current catalog price.
+4. NULL is not zero or ''. Use IS NULL; COUNT(column) ignores missing values.
+5. WHERE filters rows; HAVING filters grouped results. Keep strict grouping enabled.
+6. SQL has no guaranteed result order without ORDER BY. Break pagination ties.
+7. INNER JOIN keeps matches. LEFT JOIN preserves left rows; right-side WHERE
+   filters can remove unmatched rows. Count a child key, not *, for child counts.
+8. Always preview UPDATE/DELETE targets. A missing WHERE can affect every row.
+9. Use transactions for related InnoDB writes; check affected rows. DDL often
+   commits implicitly. ROLLBACK does not reverse a committed change.
+10. Primary keys identify rows; foreign keys protect relationships. Constraints
+    belong in the database as well as application validation.
+11. Bind user values with driver parameters. Allowlist dynamic SQL identifiers.
+12. Use DECIMAL for exact money, text for phone numbers, and date/time types
+    for dates. Decide a timezone convention and apply it consistently.
+13. Indexes trade read speed for storage and write work. Inspect plans and
+    test with representative data before making performance claims.
+14. Least privilege and a tested restore are basic database operating skills.
+15. Read the entire error. Common categories are syntax (1064), unknown column
+    (1054), duplicate key (1062), foreign key (1451/1452), and CHECK (3819).
+
+GOOD TO KNOW
+- CTEs exist for one statement; views are stored queries, not cached datasets.
+- Window functions retain rows while GROUP BY collapses groups.
+- UNION deduplicates; UNION ALL keeps duplicates.
+- AUTO_INCREMENT gaps are normal, including after rollback.
+- EXPLAIN ANALYZE executes its query. Tiny data is unsuitable for timing claims.
+- A statement error may leave the transaction open; do not assume total rollback.
+- Character set controls encoding; collation controls comparison and sorting.
+- Never disable strict SQL mode or integrity checks merely to silence errors.

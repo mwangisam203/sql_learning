@@ -1,0 +1,61 @@
+MYSQL SYNTAX CHEAT SHEET -- examples use mysql_learning
+
+CONNECT / INSPECT (terminal, then SQL)
+  mysql -u root -p
+  USE mysql_learning;
+  SHOW TABLES;
+  DESCRIBE customers;
+  SHOW CREATE TABLE orders;
+
+SELECT / FILTER / ORDER
+  SELECT product_name, price FROM products
+  WHERE category IN ('home', 'electronics') AND price >= 8.00
+  ORDER BY price DESC, product_id LIMIT 10;
+
+NULL / EXPRESSIONS
+  SELECT full_name, COALESCE(phone, 'Missing') AS phone_label
+  FROM customers WHERE phone IS NULL;
+  SELECT product_name, ROUND(price * 1.16, 2) AS sample_taxed_price FROM products;
+
+DATES (inclusive start, exclusive end)
+  SELECT order_id FROM orders
+  WHERE ordered_at >= '2025-03-01' AND ordered_at < '2025-04-01';
+
+GROUPS / HAVING
+  SELECT city, COUNT(*) AS n FROM customers
+  GROUP BY city HAVING COUNT(*) >= 2 ORDER BY n DESC, city;
+
+JOIN / REVENUE
+  SELECT SUM(oi.quantity * oi.unit_price) AS revenue
+  FROM orders AS o JOIN order_items AS oi ON oi.order_id = o.order_id
+  WHERE o.status IN ('paid', 'shipped');
+
+ABSENCE
+  SELECT c.customer_id FROM customers AS c
+  WHERE NOT EXISTS (SELECT 1 FROM orders AS o WHERE o.customer_id = c.customer_id);
+
+WRITE WITH PREVIEW AND ROLLBACK
+  START TRANSACTION;
+  SELECT product_id, stock FROM products WHERE product_id = 1;
+  UPDATE products SET stock = stock - 1 WHERE product_id = 1 AND stock >= 1;
+  SELECT ROW_COUNT();
+  ROLLBACK;
+
+CTE / WINDOW
+  WITH totals AS (
+    SELECT customer_id, COUNT(*) AS n FROM orders GROUP BY customer_id
+  )
+  SELECT customer_id, n, DENSE_RANK() OVER (ORDER BY n DESC) AS position
+  FROM totals ORDER BY position, customer_id;
+
+DDL (not protected by a normal rollback)
+  CREATE TABLE lesson_demo (id INT PRIMARY KEY, label VARCHAR(50) NOT NULL);
+  ALTER TABLE lesson_demo ADD COLUMN notes VARCHAR(200) NULL;
+  DROP TABLE lesson_demo;
+
+COMMENTS / QUOTING
+  -- This comment has a space after the double hyphen.
+  /* Block comment */
+  'a string'       `an_identifier`       NULL (no quotes)
+
+Use answers.sql and the official references for full, executable examples.

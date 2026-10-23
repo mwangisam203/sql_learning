@@ -1,0 +1,45 @@
+COMMON MISTAKES AND BETTER HABITS
+
+Wrong: WHERE phone = NULL
+Use:   WHERE phone IS NULL
+Why:   Ordinary equality to NULL evaluates to UNKNOWN.
+
+Wrong: SELECT city, full_name, COUNT(*) FROM customers GROUP BY city
+Use:   SELECT city, COUNT(*) FROM customers GROUP BY city
+Why:   full_name is not determined by city. Pick an explicit aggregation if needed.
+
+Wrong: Counting orders with COUNT(*) after joining order_items
+Use:   COUNT(DISTINCT o.order_id), or first aggregate lines into one row per order.
+Why:   The joined result contains one row per line.
+
+Wrong: LEFT JOIN orders o ON ... WHERE o.status = 'paid', expecting all customers
+Use:   Put o.status = 'paid' in ON when all left-side customers must remain.
+Why:   A missing order produces NULL, which does not pass that WHERE condition.
+
+Wrong: BETWEEN '2025-03-01' AND '2025-03-31' for a datetime month
+Use:   >= '2025-03-01' AND < '2025-04-01'
+Why:   The original endpoint means midnight at the start of March 31.
+
+Wrong: SUM(products.price * quantity) for historical revenue
+Use:   SUM(order_items.unit_price * quantity), filtered to qualifying statuses.
+Why:   Catalog prices can change after purchase.
+
+Wrong: ORDER BY price DESC LIMIT 3, expecting stable membership at a tie
+Use:   ORDER BY price DESC, product_id ASC LIMIT 3
+Why:   A unique tie breaker determines the order for equal prices.
+
+Wrong: UPDATE products SET stock = 0; in an experiment
+Use:   Preview the intended key(s), use WHERE, and work inside a transaction.
+Why:   Without WHERE this targets the whole table.
+
+Wrong: Run ALTER TABLE, then ROLLBACK, expecting the old schema
+Use:   Plan a migration and recovery; most DDL implicitly commits.
+Why:   Successful schema changes are not reversed by ordinary ROLLBACK.
+
+Wrong: Build SQL with an f-string containing user input
+Use:   Your driver's parameter-binding API; allowlist any dynamic identifiers.
+Why:   User data must not become SQL code.
+
+Wrong: Hide a bad join with DISTINCT, or turn off ONLY_FULL_GROUP_BY
+Use:   Correct the join grain and grouping logic.
+Why:   Silencing a symptom does not establish a correct report.

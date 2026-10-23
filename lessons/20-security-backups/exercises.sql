@@ -1,0 +1,5 @@
+-- 1. PREPARE a product lookup accepting a minimum price value.
+--    Execute it with 30.00 and deallocate it. Order results by product_id.
+-- 2. Explain why a placeholder cannot stand in for an ORDER BY column name.
+-- 3. Restore the seed dump into a separate database and check its revenue.
+--    Use the shell instructions in README.md; never restore over your original.
