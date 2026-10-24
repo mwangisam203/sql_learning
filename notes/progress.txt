@@ -28,6 +28,7 @@ Mark [x] only when you can explain and write the query without copying it.
 [ ] Solve all eight project reports and explain their row grain.
 [ ] Run checks/run.py successfully against my practice server.
 [ ] Recognize dependencies and avoid update anomalies.
+[ ] Cast numeric values and handle zero denominators.
 
 My hardest topic:
 My most useful mistake:

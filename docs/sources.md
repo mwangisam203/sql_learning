@@ -21,5 +21,7 @@ covers enforced CHECK constraints, CTEs, windows, and EXPLAIN ANALYZE.
 - [Account management](https://dev.mysql.com/doc/refman/8.4/en/account-management-statements.html)
 - [mysqldump](https://dev.mysql.com/doc/refman/8.4/en/mysqldump.html)
 
+- [Convert types and guard arithmetic](https://dev.mysql.com/doc/refman/8.4/en/cast-functions.html)
+
 The explanations and sample shop data here are original teaching material.
 Use the matching manual version when investigating behavior on your server.
