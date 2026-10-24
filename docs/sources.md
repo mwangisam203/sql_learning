@@ -33,5 +33,7 @@ covers enforced CHECK constraints, CTEs, windows, and EXPLAIN ANALYZE.
 
 - [Compare rows with self joins](https://dev.mysql.com/doc/refman/8.4/en/join.html)
 
+- [Traverse hierarchies with recursive CTEs](https://dev.mysql.com/doc/refman/8.4/en/with.html)
+
 The explanations and sample shop data here are original teaching material.
 Use the matching manual version when investigating behavior on your server.
