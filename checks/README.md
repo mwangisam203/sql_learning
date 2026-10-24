@@ -29,6 +29,12 @@ fail validation. The checker leaves the seeded row values unchanged; auto-
 increment counters can advance during rolled-back insert demonstrations.
 The checker creates and removes sandbox tables, a view, and an index through
 the lessons, so it needs corresponding DDL rights in the course database.
+Advanced lessons also need CREATE TEMPORARY TABLES, CREATE ROUTINE,
+ALTER ROUTINE, EXECUTE, and TRIGGER privileges. Use the disposable server
+setup rather than granting these rights to a production application account.
+
+For lessons 21 onward, answers are also compared with each lesson's
+`expected-answers.tsv`. Lesson numbering must remain consecutive.
 
 Expected project output is checked against `expected-project.tsv` with exact
 row order and numeric formatting. Execution plans, server version strings,

@@ -66,7 +66,11 @@ def main():
     execute('SOURCE data/reset.sql;')
     # Interrupted earlier demos may have left their explicitly named sandbox objects.
     execute('USE mysql_learning; DROP TABLE IF EXISTS lesson_schema_demo; '
-            'DROP TABLE IF EXISTS lesson_migration_practice;')
+            'DROP TABLE IF EXISTS lesson_migration_practice; '
+            'DROP PROCEDURE IF EXISTS lesson33_customer_revenue; '
+            'DROP PROCEDURE IF EXISTS lesson33_category_products; '
+            'DROP TABLE IF EXISTS lesson34_inventory; '
+            'DROP TABLE IF EXISTS lesson34_audit;')
     expect('SELECT (SELECT COUNT(*) FROM customers), (SELECT COUNT(*) FROM products), '
            '(SELECT COUNT(*) FROM orders), (SELECT COUNT(*) FROM order_items);',
            '6\t6\t8\t13', 'seed counts')
@@ -79,12 +83,22 @@ def main():
     initial_rows = execute('USE mysql_learning;\n' + snapshot_sql)
 
     lesson_files = sorted(ROOT.glob('lessons/*/examples.sql'))
-    if len(lesson_files) != 20:
-        raise AssertionError(f'Expected 20 lessons, found {len(lesson_files)}')
+    numbers = [int(path.parent.name.split('-', 1)[0]) for path in lesson_files]
+    if len(numbers) < 20 or numbers != list(range(1, len(numbers) + 1)):
+        raise AssertionError('Lessons must include the original 20 and be consecutively numbered')
     executed_files = 0
     for example in lesson_files:
         for path in (example, example.with_name('answers.sql')):
-            execute(path.read_text())
+            output = execute(path.read_text())
+            if path.name == 'answers.sql':
+                fixture = path.with_name('expected-answers.tsv')
+                if int(path.parent.name.split('-', 1)[0]) >= 21 and not fixture.is_file():
+                    raise AssertionError(f'Missing expected answers: {path.parent.name}')
+                if fixture.is_file() and output != fixture.read_text().strip():
+                    diff = '\n'.join(difflib.unified_diff(
+                        fixture.read_text().strip().splitlines(), output.splitlines(),
+                        fromfile=str(fixture.relative_to(ROOT)), tofile='actual', lineterm=''))
+                    raise AssertionError(f'{path.parent.name} answers:\n{diff}')
             executed_files += 1
         # This checks every stored seed column, not just counts or revenue.
         expect(snapshot_sql, initial_rows, f'seed preservation after {example.parent.name}')
@@ -133,6 +147,14 @@ def main():
     expect("SELECT COUNT(*) FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql_learning' "
            "AND TABLE_NAME IN ('lesson_schema_demo', 'lesson_migration_practice', 'v_order_totals');",
            '0', 'sandbox object cleanup')
+    expect("SELECT COUNT(*) FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'mysql_learning' "
+           "AND TABLE_NAME IN ('lesson34_inventory', 'lesson34_audit');",
+           '0', 'trigger table cleanup')
+    expect("SELECT COUNT(*) FROM information_schema.ROUTINES WHERE ROUTINE_SCHEMA = 'mysql_learning' "
+           "AND ROUTINE_NAME IN ('lesson33_customer_revenue', 'lesson33_category_products');",
+           '0', 'procedure cleanup')
+    expect("SELECT COUNT(*) FROM information_schema.TRIGGERS WHERE TRIGGER_SCHEMA = 'mysql_learning' "
+           "AND TRIGGER_NAME = 'lesson34_stock_audit';", '0', 'trigger cleanup')
     expect("SELECT COUNT(*) FROM information_schema.STATISTICS WHERE TABLE_SCHEMA = 'mysql_learning' "
            "AND INDEX_NAME = 'idx_lesson_orders_customer_date';", '0', 'demo index cleanup')
     print(f'PASS {executed_files} lesson SQL files, 8 reports, result checks, '
