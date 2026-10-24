@@ -1,0 +1,8 @@
+1	event-a	duplicate_external_id
+2	event-a	duplicate_external_id
+3	event-b	missing_customer
+4	event-c	invalid_quantity
+5	event-d	invalid_price
+6	event-e	invalid_status
+7	6	1
+174.00

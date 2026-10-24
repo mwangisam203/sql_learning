@@ -41,6 +41,7 @@ Mark [x] only when you can explain and write the query without copying it.
 [ ] Express all-of-a-set questions with relational division.
 [ ] Use procedure parameters and signal invalid input.
 [ ] Inspect OLD and NEW values and roll back audit writes.
+[ ] Detect duplicate events and reconcile an import batch.
 
 My hardest topic:
 My most useful mistake:

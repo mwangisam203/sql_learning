@@ -1,0 +1,13 @@
+-- Use the mysql_learning seed. Write your SQL below the prompts.
+
+-- 1. Stage these columns: batch_row, external_id, customer_id, quantity, price, status.
+--    Rows (price is DECIMAL(10,2)):
+--    (1,'event-a',1,2,4.50,'paid'), (2,'event-a',2,1,8.00,'paid'),
+--    (3,'event-b',999999,1,5.00,'pending'), (4,'event-c',3,0,4.50,'paid'),
+--    (5,'event-d',4,1,-1.00,'cancelled'), (6,'event-e',5,1,8.00,'unknown'),
+--    (7,'event-f',6,1,2.00,'pending').
+-- 2. Collect every issue in a second temporary table: duplicate_external_id,
+--    missing_customer, invalid_quantity, invalid_price, or invalid_status.
+-- 3. Return batch_row, external_id, issue sorted by batch_row then issue.
+-- 4. Return input_rows, rejected_rows (distinct), eligible_rows in one row.
+-- 5. Return completed shop revenue to show it is unchanged. Drop both tables.

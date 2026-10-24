@@ -1,6 +1,6 @@
 # Learn MySQL, one commit at a time
 
-A beginner-friendly course with **34 lessons** and a shop reporting project.
+A beginner-friendly course with **35 lessons** and a shop reporting project.
 Each topic is introduced in a focused Git commit. Target: **MySQL 8.0.18+**, with
 MySQL 8.4 used in the optional Docker setup. These are MySQL examples;
 SQLite and MariaDB have different syntax and behavior in some areas.
@@ -20,6 +20,9 @@ Use only a disposable learning database. Leave strict SQL mode enabled.
 The existing `demo_mysql_test.py` is independent of this course.
 
 ## Lessons
+
+Lessons 01-20 build the foundation. After the shop project, use lessons 21-35
+for deeper design, reporting, stored programs, and import practice.
 
 | # | Topic | Main skill |
 |---|-------|------------|
@@ -57,15 +60,16 @@ The existing `demo_mysql_test.py` is independent of this course.
 | 32 | [Find customers matching every required product](lessons/32-all-of-a-set/README.md) | Express all-of-a-set questions with relational division |
 | 33 | [Package queries in stored procedures](lessons/33-stored-procedures/README.md) | Use procedure parameters and signal invalid input |
 | 34 | [Audit changes with transactional triggers](lessons/34-audit-triggers/README.md) | Inspect OLD and NEW values and roll back audit writes |
+| 35 | [Quarantine invalid incoming data](lessons/35-data-quality-capstone/README.md) | Detect duplicate events and reconcile an import batch |
 
 ## Keep nearby
 
 - [Data model](docs/data-model.md) and [seed facts](docs/dataset.md)
-- [Syntax cheat sheet](notes/syntax-cheatsheet.txt)
+- [Syntax cheat sheet](notes/syntax-cheatsheet.txt) and [advanced reference](notes/advanced-cheatsheet.txt)
 - [Must-know rules](notes/must-know.txt) and [common mistakes](notes/common-mistakes.txt)
 - [Study method](notes/study-guide.txt) and [progress checklist](notes/progress.txt)
 - [Official references](docs/sources.md)
-- [Validation instructions](checks/README.md)
+- [Validation instructions](checks/README.md) and [latest results](checks/validation-extension.md)
 
 Use `git log --reverse --oneline` to see the learning sequence and
 `git show <commit>` to inspect the files introduced by one step.

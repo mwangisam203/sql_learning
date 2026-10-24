@@ -100,6 +100,16 @@ def main():
                         fromfile=str(fixture.relative_to(ROOT)), tofile='actual', lineterm=''))
                     raise AssertionError(f'{path.parent.name} answers:\n{diff}')
             executed_files += 1
+        if example.parent.name == '33-stored-procedures':
+            # Recreate the read-only demo briefly to verify the SIGNAL branch.
+            setup = example.read_text().replace('DROP PROCEDURE lesson33_customer_revenue;', '')
+            execute(setup)
+            try:
+                for invalid_id in ('NULL', '0', '-1'):
+                    execute('USE mysql_learning; CALL lesson33_customer_revenue(' + invalid_id + ');',
+                            expected_error=1644)
+            finally:
+                execute('USE mysql_learning; DROP PROCEDURE lesson33_customer_revenue;')
         # This checks every stored seed column, not just counts or revenue.
         expect(snapshot_sql, initial_rows, f'seed preservation after {example.parent.name}')
         print(f'PASS {example.parent.name}: examples, answers, seed preserved', flush=True)

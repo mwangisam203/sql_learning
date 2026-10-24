@@ -1,0 +1,60 @@
+MYSQL CONTINUATION: LESSONS 21-35
+
+DESIGN
+  Identify functional dependencies before splitting or combining tables.
+  Historical purchase prices and current catalog prices are different facts.
+
+SAFE NUMBERS
+  CAST(expression AS DECIMAL(10,2))
+  numerator / NULLIF(denominator, 0)
+  NULL for an undefined rate is different from a measured zero.
+
+JSON
+  JSON_UNQUOTE(JSON_EXTRACT(document, '$.field'))
+  JSON_TABLE(document, '$[*]' COLUMNS (id INT PATH '$.id')) AS rows_from_json
+
+GENERATED VALUE
+  total DECIMAL(12,2) GENERATED ALWAYS AS (quantity * unit_price) STORED
+  A generated expression cannot query another table for a value.
+
+STAGING
+  CREATE TEMPORARY TABLE ...;
+  INSERT INTO staged (...) SELECT ...;
+  DROP TEMPORARY TABLE staged;
+  Reusing the same temporary table twice in one query can fail in MySQL.
+
+UPSERT
+  INSERT INTO staged_stock (id, stock) VALUES (1, 12)
+  ON DUPLICATE KEY UPDATE stock = 12;
+  Absolute-state replacement and additive updates have different retry behavior.
+
+PAIRS / TREES
+  Self join with a.id < b.id for unique unordered pairs.
+  Recursive CTE = anchor UNION ALL recursive step; bound depth, handle cycles.
+  CAST growing path columns wide enough in the anchor.
+
+TIME SERIES
+  Calendar LEFT JOIN monthly totals retains empty months.
+  LAG/LEAD read adjacent rows, not necessarily adjacent calendar periods.
+  Aggregate to the right grain before applying windows.
+
+TOTALS
+  GROUP BY category WITH ROLLUP
+  GROUPING(category) separates the grand-total marker from a real NULL value.
+  Do not sum subtotal output together with its grand total.
+
+EVERY REQUIRED ITEM
+  Compare COUNT(DISTINCT matched_id) to the required set size for nonempty sets.
+  Double NOT EXISTS handles an empty required set differently; define the rule.
+
+STORED PROGRAMS
+  DELIMITER belongs to the mysql client, not the server SQL language.
+  SIGNAL SQLSTATE '45000' raises a user-defined error.
+  Procedures can use SQL SECURITY INVOKER; triggers use definer context.
+  InnoDB trigger audit writes roll back with their parent transaction.
+
+DATA QUALITY
+  Keep constraints on the destination. Stage and report invalid rows first.
+  Rejected records != issue count when a record has multiple issues.
+  Reconcile input = distinct rejected + eligible.
+  Cross-batch retries need a persistent unique event identity.
