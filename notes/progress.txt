@@ -37,6 +37,7 @@ Mark [x] only when you can explain and write the query without copying it.
 [ ] Walk a tree with an anchor and recursive step.
 [ ] Combine a calendar CTE with zero-filled revenue.
 [ ] Calculate period changes and time between orders.
+[ ] Distinguish totals from missing values with GROUPING.
 
 My hardest topic:
 My most useful mistake:
