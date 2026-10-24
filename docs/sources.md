@@ -29,5 +29,7 @@ covers enforced CHECK constraints, CTEs, windows, and EXPLAIN ANALYZE.
 
 - [Stage results with temporary tables](https://dev.mysql.com/doc/refman/8.4/en/create-temporary-table.html)
 
+- [Handle duplicate keys with upserts](https://dev.mysql.com/doc/refman/8.4/en/insert-on-duplicate.html)
+
 The explanations and sample shop data here are original teaching material.
 Use the matching manual version when investigating behavior on your server.
