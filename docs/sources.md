@@ -45,5 +45,7 @@ covers enforced CHECK constraints, CTEs, windows, and EXPLAIN ANALYZE.
 
 - [Package queries in stored procedures](https://dev.mysql.com/doc/refman/8.4/en/create-procedure.html)
 
+- [Audit changes with transactional triggers](https://dev.mysql.com/doc/refman/8.4/en/trigger-syntax.html)
+
 The explanations and sample shop data here are original teaching material.
 Use the matching manual version when investigating behavior on your server.
