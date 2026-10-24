@@ -36,6 +36,7 @@ Mark [x] only when you can explain and write the query without copying it.
 [ ] Match a table to itself without duplicate pairs.
 [ ] Walk a tree with an anchor and recursive step.
 [ ] Combine a calendar CTE with zero-filled revenue.
+[ ] Calculate period changes and time between orders.
 
 My hardest topic:
 My most useful mistake:

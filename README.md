@@ -1,6 +1,6 @@
 # Learn MySQL, one commit at a time
 
-A beginner-friendly course with **29 lessons** and a shop reporting project.
+A beginner-friendly course with **30 lessons** and a shop reporting project.
 Each topic is introduced in a focused Git commit. Target: **MySQL 8.0.18+**, with
 MySQL 8.4 used in the optional Docker setup. These are MySQL examples;
 SQLite and MariaDB have different syntax and behavior in some areas.
@@ -52,6 +52,7 @@ The existing `demo_mysql_test.py` is independent of this course.
 | 27 | [Compare rows with self joins](lessons/27-self-joins/README.md) | Match a table to itself without duplicate pairs |
 | 28 | [Traverse hierarchies with recursive CTEs](lessons/28-recursive-hierarchies/README.md) | Walk a tree with an anchor and recursive step |
 | 29 | [Fill missing months in reports](lessons/29-calendar-reports/README.md) | Combine a calendar CTE with zero-filled revenue |
+| 30 | [Compare neighboring rows with LAG and LEAD](lessons/30-lag-lead/README.md) | Calculate period changes and time between orders |
 
 ## Keep nearby
 
