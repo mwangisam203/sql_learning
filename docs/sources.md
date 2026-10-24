@@ -31,5 +31,7 @@ covers enforced CHECK constraints, CTEs, windows, and EXPLAIN ANALYZE.
 
 - [Handle duplicate keys with upserts](https://dev.mysql.com/doc/refman/8.4/en/insert-on-duplicate.html)
 
+- [Compare rows with self joins](https://dev.mysql.com/doc/refman/8.4/en/join.html)
+
 The explanations and sample shop data here are original teaching material.
 Use the matching manual version when investigating behavior on your server.

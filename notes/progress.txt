@@ -33,6 +33,7 @@ Mark [x] only when you can explain and write the query without copying it.
 [ ] Choose virtual or stored generated columns.
 [ ] Reuse session-local results with INSERT SELECT.
 [ ] Separate replacement upserts from additive updates.
+[ ] Match a table to itself without duplicate pairs.
 
 My hardest topic:
 My most useful mistake:

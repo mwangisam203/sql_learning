@@ -1,6 +1,6 @@
 # Learn MySQL, one commit at a time
 
-A beginner-friendly course with **26 lessons** and a shop reporting project.
+A beginner-friendly course with **27 lessons** and a shop reporting project.
 Each topic is introduced in a focused Git commit. Target: **MySQL 8.0.18+**, with
 MySQL 8.4 used in the optional Docker setup. These are MySQL examples;
 SQLite and MariaDB have different syntax and behavior in some areas.
@@ -49,6 +49,7 @@ The existing `demo_mysql_test.py` is independent of this course.
 | 24 | [Derive values with generated columns](lessons/24-generated-columns/README.md) | Choose virtual or stored generated columns |
 | 25 | [Stage results with temporary tables](lessons/25-temporary-tables/README.md) | Reuse session-local results with INSERT SELECT |
 | 26 | [Handle duplicate keys with upserts](lessons/26-upserts/README.md) | Separate replacement upserts from additive updates |
+| 27 | [Compare rows with self joins](lessons/27-self-joins/README.md) | Match a table to itself without duplicate pairs |
 
 ## Keep nearby
 
