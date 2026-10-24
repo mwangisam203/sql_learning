@@ -1,6 +1,6 @@
 # Learn MySQL, one commit at a time
 
-A beginner-friendly course with **32 lessons** and a shop reporting project.
+A beginner-friendly course with **33 lessons** and a shop reporting project.
 Each topic is introduced in a focused Git commit. Target: **MySQL 8.0.18+**, with
 MySQL 8.4 used in the optional Docker setup. These are MySQL examples;
 SQLite and MariaDB have different syntax and behavior in some areas.
@@ -55,6 +55,7 @@ The existing `demo_mysql_test.py` is independent of this course.
 | 30 | [Compare neighboring rows with LAG and LEAD](lessons/30-lag-lead/README.md) | Calculate period changes and time between orders |
 | 31 | [Add subtotals with ROLLUP](lessons/31-rollup/README.md) | Distinguish totals from missing values with GROUPING |
 | 32 | [Find customers matching every required product](lessons/32-all-of-a-set/README.md) | Express all-of-a-set questions with relational division |
+| 33 | [Package queries in stored procedures](lessons/33-stored-procedures/README.md) | Use procedure parameters and signal invalid input |
 
 ## Keep nearby
 

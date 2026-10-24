@@ -39,6 +39,7 @@ Mark [x] only when you can explain and write the query without copying it.
 [ ] Calculate period changes and time between orders.
 [ ] Distinguish totals from missing values with GROUPING.
 [ ] Express all-of-a-set questions with relational division.
+[ ] Use procedure parameters and signal invalid input.
 
 My hardest topic:
 My most useful mistake:
