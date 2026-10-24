@@ -23,5 +23,7 @@ covers enforced CHECK constraints, CTEs, windows, and EXPLAIN ANALYZE.
 
 - [Convert types and guard arithmetic](https://dev.mysql.com/doc/refman/8.4/en/cast-functions.html)
 
+- [Read JSON documents as relational rows](https://dev.mysql.com/doc/refman/8.4/en/json-table-functions.html)
+
 The explanations and sample shop data here are original teaching material.
 Use the matching manual version when investigating behavior on your server.

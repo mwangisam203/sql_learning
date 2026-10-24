@@ -1,6 +1,6 @@
 # Learn MySQL, one commit at a time
 
-A beginner-friendly course with **22 lessons** and a shop reporting project.
+A beginner-friendly course with **23 lessons** and a shop reporting project.
 Each topic is introduced in a focused Git commit. Target: **MySQL 8.0.18+**, with
 MySQL 8.4 used in the optional Docker setup. These are MySQL examples;
 SQLite and MariaDB have different syntax and behavior in some areas.
@@ -45,6 +45,7 @@ The existing `demo_mysql_test.py` is independent of this course.
 | 20 | [Security and backups](lessons/20-security-backups/README.md) | Parameters and recovery |
 | 21 | [Normalize a relational design](lessons/21-normalization/README.md) | Recognize dependencies and avoid update anomalies |
 | 22 | [Convert types and guard arithmetic](lessons/22-numeric-conversion/README.md) | Cast numeric values and handle zero denominators |
+| 23 | [Read JSON documents as relational rows](lessons/23-json/README.md) | Extract JSON fields and expand arrays with JSON_TABLE |
 
 ## Keep nearby
 

@@ -29,6 +29,7 @@ Mark [x] only when you can explain and write the query without copying it.
 [ ] Run checks/run.py successfully against my practice server.
 [ ] Recognize dependencies and avoid update anomalies.
 [ ] Cast numeric values and handle zero denominators.
+[ ] Extract JSON fields and expand arrays with JSON_TABLE.
 
 My hardest topic:
 My most useful mistake:
