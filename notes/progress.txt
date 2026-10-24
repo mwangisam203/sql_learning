@@ -31,6 +31,7 @@ Mark [x] only when you can explain and write the query without copying it.
 [ ] Cast numeric values and handle zero denominators.
 [ ] Extract JSON fields and expand arrays with JSON_TABLE.
 [ ] Choose virtual or stored generated columns.
+[ ] Reuse session-local results with INSERT SELECT.
 
 My hardest topic:
 My most useful mistake:
