@@ -43,3 +43,8 @@ Why:   User data must not become SQL code.
 Wrong: Hide a bad join with DISTINCT, or turn off ONLY_FULL_GROUP_BY
 Use:   Correct the join grain and grouping logic.
 Why:   Silencing a symptom does not establish a correct report.
+
+Wrong: Run SOURCE data/reset.sql from a client opened in another directory
+Use:   Open the mysql client from the repository root before running course files.
+Why:   SOURCE resolves relative paths from the client's working directory;
+       the reset file also uses relative paths for its schema and seed files.
