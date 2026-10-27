@@ -29,3 +29,4 @@ not just a result that happens to match today's seed.
 | Drill | Practice focus |
 |-------|----------------|
 | [01: Retrieve columns and inspect the row grain](01-read-the-schema/README.md) | SELECT |
+| [02: Repair Boolean filters and date boundaries](02-repair-filters/README.md) | Filtering |

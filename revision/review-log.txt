@@ -7,3 +7,4 @@ Copy an attempt row when you repeat a drill; keep your earlier observations.
 
 Drill | Date | Score / 4 | One correction | Next review date
 01 | | | |
+02 | | | |
