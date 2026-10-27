@@ -46,3 +46,6 @@ Mark [x] only when you can explain and write the query without copying it.
 My hardest topic:
 My most useful mistake:
 My next practice project:
+Last practice date:
+Next lesson to study:
+One query to rewrite from memory:
