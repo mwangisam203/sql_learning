@@ -1,0 +1,67 @@
+MYSQL RECALL CARDS -- say the answer before uncovering the next line
+
+Q: Which clause filters rows before grouping? Which filters grouped results?
+A: WHERE filters rows; HAVING filters groups.
+
+Q: Does COUNT(phone) include missing phones?
+A: No. COUNT(*) counts rows; COUNT(phone) counts non-NULL phone values.
+
+Q: What does one row represent after joining orders to order_items?
+A: An order line, so COUNT(*) no longer counts order headers.
+
+Q: How do you preserve customers with no qualifying orders?
+A: LEFT JOIN with the qualifying child condition in ON; count the child key.
+
+Q: Are missing values equal to each other under ordinary equality?
+A: NULL = NULL is UNKNOWN. Use IS NULL, or MySQL's null-safe <=> when comparing values.
+
+Q: Does a normal ROLLBACK undo a successful ALTER TABLE?
+A: No. Most DDL implicitly commits and needs a planned migration/recovery approach.
+
+Q: Are rolled-back AUTO_INCREMENT IDs guaranteed to be reused?
+A: No. Gaps are normal and IDs are not row counts.
+
+Q: When should current catalog prices be used in these exercises?
+A: Prospective quotes. Historical revenue uses the purchase line's unit_price.
+
+Q: Why add a unique tie breaker to pagination ordering?
+A: It makes ordering deterministic for unchanged data with equal sort values.
+
+Q: Is LAG necessarily yesterday or the previous calendar month?
+A: No. It reads an earlier row; fill calendar gaps first when periods must be adjacent.
+
+Q: Does adding a unique ID inside DENSE_RANK preserve ties in the measured value?
+A: No. Rank by the measured value alone; order the final display separately.
+
+Q: Is a CTE permanent? Is an ordinary view a frozen copy of rows?
+A: Neither. A CTE belongs to one statement; an ordinary view stores a query definition.
+
+Q: What distinguishes a temporary table from a CTE?
+A: The temporary table can be reused across statements in the same connection.
+
+Q: What does GROUPING(category) identify in a WITH ROLLUP report?
+A: Whether that column position is part of a super-aggregate row, rather than a regular value.
+
+Q: Why does CAST a JSON product ID not validate its relationship?
+A: A valid integer need not match a real catalog product. Check the reference.
+
+Q: Can a prepared-statement placeholder choose an arbitrary SQL column name?
+A: No. Bind values; choose dynamic identifiers from trusted allowlisted fragments.
+
+Q: Does EXPLAIN ANALYZE merely estimate a query?
+A: It executes supported statements and reports observed execution information.
+
+Q: Is setting stock to 12 equivalent to adding 12 when a request retries?
+A: No. Repeated absolute replacement has different semantics from repeated increments.
+
+Q: Does DELIMITER belong in SQL sent directly through a database driver?
+A: It is a mysql client command; send the complete routine definition through the driver.
+
+Q: What happens to an InnoDB audit-trigger insert when its transaction rolls back?
+A: It rolls back with the triggering transaction's row changes.
+
+Q: Does counting issue rows always count rejected input records?
+A: No. One rejected record can have several issues; count distinct rejected record IDs.
+
+Q: What proves a backup is useful beyond merely having a file?
+A: A successful restore into a separate target with validated data, constraints, and reports.

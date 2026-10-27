@@ -47,3 +47,8 @@ not just a result that happens to match today's seed.
 | [17: Preserve ties and calculate a running total](17-window-recall/README.md) | Window functions |
 | [18: Validate JSON product references before quoting](18-validate-a-json-quote/README.md) | JSON_TABLE |
 | [19: Distinguish idempotent replacement from repeated increments](19-retry-an-upsert/README.md) | Upserts |
+| [20: Reconcile a customer report with line-level totals](20-mixed-reconciliation/README.md) | Shop reporting with CTEs |
+
+Use [quick recall cards](flashcards.txt) between sessions. The
+[validation record](../checks/validation-revision.md) documents the checked
+answer files; your own practice queries still need to meet each drill's rules.
