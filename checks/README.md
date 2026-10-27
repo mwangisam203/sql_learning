@@ -44,3 +44,7 @@ after resolving an error; interrupted DDL demos can leave sandbox objects.
 
 This verifies syntax and results on your running server. It does not benchmark
 index performance or automatically exercise the manual backup/restore lab.
+
+The final PASS summary includes seven constraint failures. These are deliberate
+invalid writes that the database must reject; they are expected checks. An
+unexpected error produces a FAIL message and a nonzero exit status.
