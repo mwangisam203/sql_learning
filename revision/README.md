@@ -43,3 +43,4 @@ not just a result that happens to match today's seed.
 | [13: Reserve stock and verify affected rows](13-guarded-stock/README.md) | Safe CRUD |
 | [14: Predict partial and full rollback results](14-savepoint-recall/README.md) | Transactions and savepoints |
 | [15: Read constraints and verify data integrity](15-integrity-diagnostics/README.md) | Constraints |
+| [16: Separate average order value from average line value](16-average-at-the-right-grain/README.md) | CTEs |
