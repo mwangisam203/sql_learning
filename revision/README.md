@@ -41,3 +41,4 @@ not just a result that happens to match today's seed.
 | [11: Turn reporting rules into explicit labels](11-business-labels/README.md) | CASE |
 | [12: Report days without completed orders](12-daily-calendar/README.md) | Calendar reports |
 | [13: Reserve stock and verify affected rows](13-guarded-stock/README.md) | Safe CRUD |
+| [14: Predict partial and full rollback results](14-savepoint-recall/README.md) | Transactions and savepoints |
