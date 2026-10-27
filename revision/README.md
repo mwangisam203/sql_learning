@@ -36,3 +36,4 @@ not just a result that happens to match today's seed.
 | [06: Separate row filters from group filters](06-where-or-having/README.md) | Grouping |
 | [07: Count orders correctly after joining their lines](07-join-fanout/README.md) | INNER JOIN |
 | [08: Keep customers with zero qualifying orders](08-keep-zero-rows/README.md) | LEFT JOIN |
+| [09: Distinguish no orders from no completed orders](09-absence-definitions/README.md) | Subqueries |
