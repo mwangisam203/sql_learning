@@ -30,3 +30,4 @@ not just a result that happens to match today's seed.
 |-------|----------------|
 | [01: Retrieve columns and inspect the row grain](01-read-the-schema/README.md) | SELECT |
 | [02: Repair Boolean filters and date boundaries](02-repair-filters/README.md) | Filtering |
+| [03: Continue a sorted page without skipping ties](03-stable-pages/README.md) | Sorting and pagination |
