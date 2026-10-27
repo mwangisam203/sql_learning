@@ -46,3 +46,4 @@ not just a result that happens to match today's seed.
 | [16: Separate average order value from average line value](16-average-at-the-right-grain/README.md) | CTEs |
 | [17: Preserve ties and calculate a running total](17-window-recall/README.md) | Window functions |
 | [18: Validate JSON product references before quoting](18-validate-a-json-quote/README.md) | JSON_TABLE |
+| [19: Distinguish idempotent replacement from repeated increments](19-retry-an-upsert/README.md) | Upserts |
