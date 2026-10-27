@@ -40,3 +40,4 @@ not just a result that happens to match today's seed.
 | [10: Compare a value with its own group average](10-correlated-comparisons/README.md) | Subqueries |
 | [11: Turn reporting rules into explicit labels](11-business-labels/README.md) | CASE |
 | [12: Report days without completed orders](12-daily-calendar/README.md) | Calendar reports |
+| [13: Reserve stock and verify affected rows](13-guarded-stock/README.md) | Safe CRUD |
