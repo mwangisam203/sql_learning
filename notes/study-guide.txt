@@ -26,3 +26,7 @@ Git practice:
 
 Keep your own practice queries in a new practice/ directory. Resetting the
 course data changes database rows, not files. Keep passwords out of Git.
+
+At the start of your next session, rewrite one previous query from memory.
+Explain its filters and what one result row represents before running it.
+If you need the answer file, note the part to revisit after the next lesson.
