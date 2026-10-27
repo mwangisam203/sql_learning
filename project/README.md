@@ -22,6 +22,10 @@ explain how you handle missing matches. Report 6 must average **order totals**,
 not line values. For report 8 use DENSE_RANK with only revenue as its window
 sort key; use customer_id only in the final display order.
 
+Before running a report, write down its expected row count and one known total.
+If the result differs, inspect the joins and status filters before changing
+the query. Use the seed facts to explain the difference.
+
 ```sql
 SOURCE project/solutions.sql;
 ```
