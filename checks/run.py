@@ -114,6 +114,20 @@ def main():
         expect(snapshot_sql, initial_rows, f'seed preservation after {example.parent.name}')
         print(f'PASS {example.parent.name}: examples, answers, seed preserved', flush=True)
 
+    revision_files = sorted(ROOT.glob('revision/*/answers.sql'))
+    revision_numbers = [int(path.parent.name.split('-', 1)[0]) for path in revision_files]
+    if revision_numbers != list(range(1, len(revision_numbers) + 1)):
+        raise AssertionError('Revision drills must be consecutively numbered from 01')
+    revision_count = 0
+    for path in revision_files:
+        fixture = path.with_name('expected.tsv')
+        if not fixture.is_file():
+            raise AssertionError(f'Missing revision fixture: {path.parent.name}')
+        expect(path.read_text(), fixture.read_text().strip(), f'{path.parent.name} revision output')
+        expect(snapshot_sql, initial_rows, f'seed preservation after revision {path.parent.name}')
+        revision_count += 1
+        print(f'PASS revision {path.parent.name}: expected output, seed preserved', flush=True)
+
     expected_project = (ROOT / 'checks/expected-project.tsv').read_text().strip()
     actual_project = execute((ROOT / 'project/solutions.sql').read_text())
     if actual_project != expected_project:
@@ -167,7 +181,8 @@ def main():
            "AND TRIGGER_NAME = 'lesson34_stock_audit';", '0', 'trigger cleanup')
     expect("SELECT COUNT(*) FROM information_schema.STATISTICS WHERE TABLE_SCHEMA = 'mysql_learning' "
            "AND INDEX_NAME = 'idx_lesson_orders_customer_date';", '0', 'demo index cleanup')
-    print(f'PASS {executed_files} lesson SQL files, 8 reports, result checks, '
+    print(f'PASS {executed_files} lesson SQL files, {revision_count} revision drills, '
+          f'8 reports, result checks, '
           f'7 constraint failures, and cleanup ({calls} mysql calls)', flush=True)
 
 

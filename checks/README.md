@@ -48,3 +48,8 @@ index performance or automatically exercise the manual backup/restore lab.
 The final PASS summary includes seven constraint failures. These are deliberate
 invalid writes that the database must reject; they are expected checks. An
 unexpected error produces a FAIL message and a nonzero exit status.
+
+Revision answer files under `revision/` are also executed in numerical order.
+Their result rows must match each drill's `expected.tsv`, and all stored shop
+rows must match the seed afterward. Starter files are for your own solutions;
+the runner verifies the worked answers, not your copied practice files.

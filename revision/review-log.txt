@@ -1,0 +1,9 @@
+MYSQL REVISION REVIEW LOG
+
+For each attempt, record a score out of 4 (two SQL tasks + two explanations).
+After using a hint, retry that task from memory in a later session.
+A lower score is a pointer to the next useful exercise, not a deadline.
+Copy an attempt row when you repeat a drill; keep your earlier observations.
+
+Drill | Date | Score / 4 | One correction | Next review date
+01 | | | |
