@@ -46,3 +46,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [22: Distinguish omitted columns from explicit NULL](22-default-and-null/README.md) | Column defaults |
 | [23: Compare DELETE rollback with TRUNCATE rollback](23-delete-truncate-rollback/README.md) | DML versus DDL |
 | [24: Distinguish JSON null from an absent path](24-json-null-or-missing/README.md) | Document presence versus value |
+| [25: Keep parent documents with empty JSON arrays](25-empty-json-array/README.md) | Outer joins to JSON_TABLE |
