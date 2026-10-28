@@ -29,3 +29,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [05: Preaggregate independent one-to-many relationships](05-two-child-fanout/README.md) | Join multiplication |
 | [06: Use the intended denominator for weighted averages](06-weighted-average/README.md) | Aggregate meaning |
 | [07: Compare rounding each line with rounding the total](07-rounding-stage/README.md) | Exact decimal rounding |
+| [08: Keep undefined rates distinct from measured zero](08-undefined-rates/README.md) | NULLIF and CASE |
