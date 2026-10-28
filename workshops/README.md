@@ -45,3 +45,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [21: Understand multiple NULLs in a nullable unique key](21-nullable-unique/README.md) | UNIQUE and NULL |
 | [22: Distinguish omitted columns from explicit NULL](22-default-and-null/README.md) | Column defaults |
 | [23: Compare DELETE rollback with TRUNCATE rollback](23-delete-truncate-rollback/README.md) | DML versus DDL |
+| [24: Distinguish JSON null from an absent path](24-json-null-or-missing/README.md) | Document presence versus value |
