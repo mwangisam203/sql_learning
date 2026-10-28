@@ -24,3 +24,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 |----------|-------|
 | [01: Choose ranking semantics when values tie](01-ranking-ties/README.md) | ROW_NUMBER, RANK, DENSE_RANK |
 | [02: Expose the NULL trap in NOT IN](02-null-in-not-in/README.md) | Three-valued logic |
+| [03: Count child keys rather than preserved rows](03-count-unmatched/README.md) | Outer-join counting |
