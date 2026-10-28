@@ -72,7 +72,7 @@ for deeper design, reporting, stored programs, and import practice.
 - [Must-know rules](notes/must-know.txt) and [common mistakes](notes/common-mistakes.txt)
 - [Study method](notes/study-guide.txt) and [progress checklist](notes/progress.txt)
 - [Official references](docs/sources.md)
-- [Validation instructions](checks/README.md) and [latest results](checks/validation-revision.md)
+- [Validation instructions](checks/README.md) and [latest results](checks/validation-workshops.md)
 
 Use `git log --reverse --oneline` to see the learning sequence and
 `git show <commit>` to inspect the files introduced by one step.

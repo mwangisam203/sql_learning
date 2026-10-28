@@ -51,3 +51,7 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [27: Define the rule when the required set is empty](27-empty-required-set/README.md) | All-of-a-set boundary cases |
 | [28: Keep both sides of a transfer in one transaction](28-atomic-transfer/README.md) | Guarded related updates |
 | [29: Reconcile a cached balance against its movement ledger](29-stock-ledger/README.md) | Running balances and reconciliation |
+| [30: Validate a cart before reserving inventory](30-cart-boundary-review/README.md) | Mixed validation capstone |
+
+Keep [the boundary checklist](boundary-checklist.txt) nearby and review
+[the validation results](../checks/validation-workshops.md) for reproducible checks.

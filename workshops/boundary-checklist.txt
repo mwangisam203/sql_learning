@@ -1,0 +1,42 @@
+BEFORE TRUSTING A SQL REPORT
+
+ROW IDENTITY
+- What does one input row represent? What does one output row represent?
+- Can either side of a join have multiple matches? Can two children multiply?
+- Are identical measure values legitimate, rather than duplicate records?
+
+MISSING AND EMPTY INPUT
+- Does NULL mean absent, unknown, or a generated subtotal marker here?
+- What happens when a subquery returns NULL or an entirely empty set?
+- Should a parent with zero children remain in the report?
+- Should an empty requirement set match everyone, no one, or raise an error?
+
+ORDER AND WINDOWS
+- Are equal sort values expected? Which ordering needs a unique tie breaker?
+- Should equal values share a rank, or receive separate row positions?
+- Is the window frame row-based, peer-based, or the complete partition?
+- Does a previous row really represent the previous calendar period?
+
+ARITHMETIC AND TIME
+- What receives equal weight in this average: lines, orders, or units?
+- Where does the business rule require rounding?
+- Should an undefined rate stay NULL instead of appearing as zero?
+- Are date boundaries inclusive/exclusive? Are intervals allowed to touch?
+- Are elapsed minutes or calendar-date changes the intended measurement?
+
+TEXT AND DOCUMENTS
+- Does the task require character count, byte count, or display width?
+- Are comparisons case/accent sensitive under the selected collation?
+- Should LIKE wildcards be literal for this input?
+- Is a JSON field missing, explicitly null, or empty text/an empty array?
+- Does a typed JSON ID actually refer to an existing entity?
+
+WRITES AND VALIDATION
+- Did I inspect affected rows immediately after the guarded write?
+- Must multiple changes commit or roll back as one unit?
+- Is DDL about to break the rollback assumption?
+- Does retrying a command replace state or apply another increment?
+- Do input, rejected, accepted, cached, and recomputed totals reconcile?
+
+After fixing a bug, keep a small counterexample that would have caught it.
+Change one boundary value and predict again before running the next query.
