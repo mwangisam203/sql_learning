@@ -50,3 +50,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [26: Choose whether combined inputs preserve repeated rows](26-union-bags/README.md) | UNION versus UNION ALL |
 | [27: Define the rule when the required set is empty](27-empty-required-set/README.md) | All-of-a-set boundary cases |
 | [28: Keep both sides of a transfer in one transaction](28-atomic-transfer/README.md) | Guarded related updates |
+| [29: Reconcile a cached balance against its movement ledger](29-stock-ledger/README.md) | Running balances and reconciliation |
