@@ -1,0 +1,16 @@
+USE mysql_learning;
+
+WITH events AS (
+    SELECT 1 AS event_id, CAST('2025-02-28 00:00:00' AS DATETIME) AS happened_at
+    UNION ALL SELECT 2,CAST('2025-02-28 23:59:59' AS DATETIME)
+    UNION ALL SELECT 3,CAST('2025-03-01 00:00:00' AS DATETIME)
+)
+SELECT event_id FROM events WHERE happened_at >= '2025-02-01' AND happened_at < '2025-03-01'
+ORDER BY event_id;
+WITH events AS (
+    SELECT 1 AS event_id, CAST('2025-02-28 00:00:00' AS DATETIME) AS happened_at
+    UNION ALL SELECT 2,CAST('2025-02-28 23:59:59' AS DATETIME)
+    UNION ALL SELECT 3,CAST('2025-03-01 00:00:00' AS DATETIME)
+)
+SELECT event_id FROM events WHERE happened_at BETWEEN '2025-02-01' AND '2025-02-28'
+ORDER BY event_id;
