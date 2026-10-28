@@ -31,3 +31,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [07: Compare rounding each line with rounding the total](07-rounding-stage/README.md) | Exact decimal rounding |
 | [08: Keep undefined rates distinct from measured zero](08-undefined-rates/README.md) | NULLIF and CASE |
 | [09: Distinguish Unicode character length from byte length](09-unicode-length/README.md) | UTF-8 strings |
+| [10: Make case and accent comparison rules explicit](10-collation-comparison/README.md) | Character set versus collation |
