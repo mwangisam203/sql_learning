@@ -38,3 +38,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [14: Choose one latest event with a deterministic tie breaker](14-latest-event/README.md) | Window-based deduplication |
 | [15: Avoid using DISTINCT amounts to hide join bugs](15-distinct-amounts/README.md) | Row identity versus measure value |
 | [16: Distinguish a real NULL group from a grand total](16-null-rollup/README.md) | GROUPING markers |
+| [17: Compare peer-aware RANGE frames with row frames](17-range-versus-rows/README.md) | Window frame units |
