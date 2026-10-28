@@ -47,3 +47,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [23: Compare DELETE rollback with TRUNCATE rollback](23-delete-truncate-rollback/README.md) | DML versus DDL |
 | [24: Distinguish JSON null from an absent path](24-json-null-or-missing/README.md) | Document presence versus value |
 | [25: Keep parent documents with empty JSON arrays](25-empty-json-array/README.md) | Outer joins to JSON_TABLE |
+| [26: Choose whether combined inputs preserve repeated rows](26-union-bags/README.md) | UNION versus UNION ALL |
