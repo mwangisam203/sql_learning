@@ -1,0 +1,7 @@
+EDGE-CASE WORKSHOP REVIEW LOG
+
+Try each query before reading the solution. Record the assumption you changed.
+Repeat a missed workshop with one sample value changed and predict again.
+
+Workshop | Attempt date | Wrong assumption | Correct rule | Retry date
+01 | | | |

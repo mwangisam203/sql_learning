@@ -15,6 +15,7 @@ SQLite and MariaDB have different syntax and behavior in some areas.
 5. Finish the [shop reporting project](project/README.md).
 6. Reinforce each topic with [revision drills](revision/README.md) and record
    your attempts in the review log.
+7. Test your assumptions with [edge-case workshops](workshops/README.md).
 
 All people and orders are fictional. Prices are in one unspecified currency;
 revenue means paid or shipped orders, excluding pending and cancelled orders.

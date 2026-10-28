@@ -128,6 +128,20 @@ def main():
         revision_count += 1
         print(f'PASS revision {path.parent.name}: expected output, seed preserved', flush=True)
 
+    workshop_files = sorted(ROOT.glob('workshops/*/solution.sql'))
+    workshop_numbers = [int(path.parent.name.split('-', 1)[0]) for path in workshop_files]
+    if workshop_numbers != list(range(1, len(workshop_numbers) + 1)):
+        raise AssertionError('Workshops must be consecutively numbered from 01')
+    workshop_count = 0
+    for path in workshop_files:
+        fixture = path.with_name('expected.tsv')
+        if not fixture.is_file():
+            raise AssertionError(f'Missing workshop fixture: {path.parent.name}')
+        expect(path.read_text(), fixture.read_text().strip(), f'{path.parent.name} workshop output')
+        expect(snapshot_sql, initial_rows, f'seed preservation after workshop {path.parent.name}')
+        workshop_count += 1
+        print(f'PASS workshop {path.parent.name}: expected output, seed preserved', flush=True)
+
     expected_project = (ROOT / 'checks/expected-project.tsv').read_text().strip()
     actual_project = execute((ROOT / 'project/solutions.sql').read_text())
     if actual_project != expected_project:
@@ -182,7 +196,7 @@ def main():
     expect("SELECT COUNT(*) FROM information_schema.STATISTICS WHERE TABLE_SCHEMA = 'mysql_learning' "
            "AND INDEX_NAME = 'idx_lesson_orders_customer_date';", '0', 'demo index cleanup')
     print(f'PASS {executed_files} lesson SQL files, {revision_count} revision drills, '
-          f'8 reports, result checks, '
+          f'{workshop_count} workshops, 8 reports, result checks, '
           f'7 constraint failures, and cleanup ({calls} mysql calls)', flush=True)
 
 

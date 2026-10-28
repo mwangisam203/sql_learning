@@ -53,3 +53,8 @@ Revision answer files under `revision/` are also executed in numerical order.
 Their result rows must match each drill's `expected.tsv`, and all stored shop
 rows must match the seed afterward. Starter files are for your own solutions;
 the runner verifies the worked answers, not your copied practice files.
+
+Edge-case workshop solutions under `workshops/` also run in numerical order.
+Each must match its `expected.tsv` and preserve every stored shop row. Sample
+inputs live in CTEs or session-local temporary tables; the checker verifies
+worked solutions, not your unfinished starter files.
