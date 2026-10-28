@@ -32,3 +32,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [08: Keep undefined rates distinct from measured zero](08-undefined-rates/README.md) | NULLIF and CASE |
 | [09: Distinguish Unicode character length from byte length](09-unicode-length/README.md) | UTF-8 strings |
 | [10: Make case and accent comparison rules explicit](10-collation-comparison/README.md) | Character set versus collation |
+| [11: Escape literal percent and underscore in LIKE](11-literal-like-wildcards/README.md) | Pattern matching |
