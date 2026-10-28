@@ -37,3 +37,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [13: Distinguish calendar-day differences from elapsed minutes](13-duration-units/README.md) | DATEDIFF and TIMESTAMPDIFF |
 | [14: Choose one latest event with a deterministic tie breaker](14-latest-event/README.md) | Window-based deduplication |
 | [15: Avoid using DISTINCT amounts to hide join bugs](15-distinct-amounts/README.md) | Row identity versus measure value |
+| [16: Distinguish a real NULL group from a grand total](16-null-rollup/README.md) | GROUPING markers |
