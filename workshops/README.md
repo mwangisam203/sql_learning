@@ -41,3 +41,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [17: Compare peer-aware RANGE frames with row frames](17-range-versus-rows/README.md) | Window frame units |
 | [18: Extend LAST_VALUE to the whole partition when required](18-last-value-frame/README.md) | Frame-sensitive value functions |
 | [19: Find runs of consecutive active dates](19-activity-islands/README.md) | Gaps and islands |
+| [20: Detect overlaps using half-open intervals](20-interval-overlap/README.md) | Boundary-sensitive self joins |
