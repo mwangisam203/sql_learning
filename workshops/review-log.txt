@@ -9,3 +9,4 @@ Workshop | Attempt date | Wrong assumption | Correct rule | Retry date
 03 | | | |
 04 | | | |
 05 | | | |
+06 | | | |

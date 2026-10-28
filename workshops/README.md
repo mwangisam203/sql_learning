@@ -27,3 +27,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [03: Count child keys rather than preserved rows](03-count-unmatched/README.md) | Outer-join counting |
 | [04: Keep outer-join filters in the intended place](04-outer-filter-position/README.md) | ON versus WHERE |
 | [05: Preaggregate independent one-to-many relationships](05-two-child-fanout/README.md) | Join multiplication |
+| [06: Use the intended denominator for weighted averages](06-weighted-average/README.md) | Aggregate meaning |
