@@ -42,3 +42,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [18: Extend LAST_VALUE to the whole partition when required](18-last-value-frame/README.md) | Frame-sensitive value functions |
 | [19: Find runs of consecutive active dates](19-activity-islands/README.md) | Gaps and islands |
 | [20: Detect overlaps using half-open intervals](20-interval-overlap/README.md) | Boundary-sensitive self joins |
+| [21: Understand multiple NULLs in a nullable unique key](21-nullable-unique/README.md) | UNIQUE and NULL |
