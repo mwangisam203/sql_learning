@@ -30,3 +30,4 @@ Workshop | Attempt date | Wrong assumption | Correct rule | Retry date
 24 | | | |
 25 | | | |
 26 | | | |
+27 | | | |
