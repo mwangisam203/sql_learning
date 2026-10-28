@@ -49,3 +49,4 @@ MySQL 8.0.18+ is required; MariaDB/SQLite behavior can differ.
 | [25: Keep parent documents with empty JSON arrays](25-empty-json-array/README.md) | Outer joins to JSON_TABLE |
 | [26: Choose whether combined inputs preserve repeated rows](26-union-bags/README.md) | UNION versus UNION ALL |
 | [27: Define the rule when the required set is empty](27-empty-required-set/README.md) | All-of-a-set boundary cases |
+| [28: Keep both sides of a transfer in one transaction](28-atomic-transfer/README.md) | Guarded related updates |
